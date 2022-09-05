@@ -76,7 +76,6 @@ public class Methods {
                 .build();
         HttpResponse<String> response = CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
         Users user = GSON.fromJson(response.body(), Users.class);
-        System.out.println("Status code getUserById "+response.statusCode());
         return user;
     }
 
