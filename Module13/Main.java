@@ -13,12 +13,12 @@ public class Main {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        //create new user to add
+        
         Users defaultUser = createDefaultUser();
         //add new user
         Users createdUser = Methods.createUser(URI.create(USERS_URL), defaultUser);
         System.out.println("Created user:\n" + createdUser);
-        //get user to update some info
+        //get user to update
         Users userToUpdate = Methods.getUserById(URI.create(USERS_URL), 7);
         //update name
         userToUpdate.setName("Oleksandr");
